@@ -18,4 +18,17 @@
 
         app.application.skin(mobileSkin);
     };
+    
+    function getAllTheData() {
+    var render = function (tx, rs) {
+        // rs contains our SQLite recordset, at this point you can do anything with it
+        // in this case we'll just loop through it and output the results to the console
+        for (var i = 0; i < rs.rows.length; i++) {
+            console.log(rs.rows.item(i));
+        }
+    }
+
+    app.selectAllRecords(render);
+}
+    
 })(window);
